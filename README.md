@@ -17,9 +17,9 @@ React-приложение для игры в угадывание случай�
 ### Быстрая перезагрузка игры
 
 # Скриншоты
-![1 скрин](../screenshots/image.png)
-![2 скрин](../screenshots/image_2.png)
-![3 скрин](../screenshots/image_3.png)
+![1 скрин](./screenshots/image.png)
+![2 скрин](./screenshots/image_2.png)
+![3 скрин](./screenshots/image_3.png)
 
 # Быстрый старт
 Предварительные требования
