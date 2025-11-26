@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+# Мини-игра "Угадай число"
+React-приложение для игры в угадывание случайного числа с сохранением статистики и истории попыток.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Возможности
+### Угадывание числа от 1 до 100
 
-## Available Scripts
+### Интеллектуальные подсказки ("слишком большое/маленькое")
 
-In the project directory, you can run:
+### Подробная статистика игр
 
-### `npm start`
+### История всех попыток
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Автосохранение прогресса в localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Адаптивный дизайн
 
-### `npm test`
+### Быстрая перезагрузка игры
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Скриншоты
+![1 скрин](../screenshots/image.png)
+![2 скрин](../screenshots/image_2.png)
+![3 скрин](../screenshots/image_3.png)
 
-### `npm run build`
+# Быстрый старт
+Предварительные требования
+Node.js (версия 14 или выше)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm или yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Установка и запуск
+Клонируйте репозиторий (или создайте файлы вручную)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Установите зависимости:
 
-### `npm run eject`
+bash
+npm install
+Запустите приложение:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+npm start
+Откройте браузер и перейдите по адресу:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+text
+http://localhost:3000
+🛠 Сборка для production
+bash
+npm run build
+Собранные файлы будут находиться в папке build/.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Структура проекта
+text
+src/
+├── components/           # React-компоненты
+│   ├── Game.js          # Главный компонент игры
+│   ├── GuessInput.js    # Компонент ввода числа
+│   ├── GuessHistory.js  # История попыток
+│   ├── GameStats.js     # Статистика игры
+│   └── RestartButton.js # Кнопка перезапуска
+├── hooks/               # Кастомные React-хуки
+│   └── useLocalStorage.js # Хук для работы с localStorage
+├── utils/               # Вспомогательные функции
+│   └── gameLogic.js     # Логика игры
+├── App.js               # Корневой компонент
+├── App.css              # Стили приложения
+└── index.js             # Точка входа
+# Как играть
+Приложение загадывает случайное число от 1 до 100
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Введите ваше предположение в поле ввода
 
-## Learn More
+Получайте подсказки: "Слишком большое" или "Слишком маленькое"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Продолжайте угадывать, пока не найдете правильное число
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+После победы можно начать новую игру
 
-### Code Splitting
+# Статистика
+Приложение отслеживает:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Количество попыток в текущей игре
 
-### Analyzing the Bundle Size
+Среднее количество попыток за все игры
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Рекорд (минимальное количество попыток)
 
-### Making a Progressive Web App
+Общее количество сыгранных игр
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Технологии
+React 18 - Библиотека для построения пользовательских интерфейсов
 
-### Advanced Configuration
+Hooks - useState, useEffect, useCallback, кастомные хуки
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Local Storage - Сохранение данных между сессиями
 
-### Deployment
+CSS3 - Современные стили и анимации
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+ES6+ - Современный JavaScript
 
-### `npm run build` fails to minify
+# Особенности реализации
+Компонентная архитектура
+Приложение разделено на переиспользуемые компоненты с четкими responsibilities:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Game - управление состоянием игры
+
+GuessInput - обработка пользовательского ввода
+
+GuessHistory - отображение истории попыток
+
+GameStats - показ статистики
+
+RestartButton - управление перезапуском игры
+
+Управление состоянием
+javascript
+const [targetNumber, setTargetNumber] = useState(generateRandomNumber());
+const [history, setHistory] = useState([]);
+const [gameCompleted, setGameCompleted] = useState(false);
+Кастомные хуки
+javascript
+// useLocalStorage.js - синхронизация состояния с localStorage
+const [value, setValue] = useLocalStorage('key', initialValue);
+Обработка событий
+Формы с предотвращением стандартного поведения
+
+Валидация пользовательского ввода
+
+Оптимизированные колбэки с useCallback
+
+# Скрипты
+npm start - Запуск development сервера
+
+npm run build - Сборка production версии
+
+npm test - Запуск тестов
+
+npm run eject - Извлечение конфигурации (необратимо)
+
+# Кастомизация
+Вы можете легко изменить настройки игры в файле src/utils/gameLogic.js:
+
+javascript
+// Изменение диапазона чисел
+export const generateRandomNumber = (min = 1, max = 1000) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+# Разработка
+Добавление новых функций
+Создайте компонент в папке components/
+
+Добавьте необходимую логику в utils/gameLogic.js
+
+Импортируйте и используйте в основном компоненте Game.js
+
+Стилизация
+Стили находятся в App.css и используют CSS-классы для каждого компонента.
+
+# Браузерная поддержка
+Chrome 90+
+
+Firefox 88+
+
+Safari 14+
+
+Edge 90+
+
+# Известные проблемы
+При очистке localStorage статистика сбрасывается
+
+В очень старых браузерах может не работать localStorage
+
+# Лицензия
+MIT License - можно свободно использовать для учебных целей.
+
+Разработано для контрольной работы №4 по React
